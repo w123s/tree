@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>树 Tree </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="css/tree.css" rel="stylesheet" type="text/css" />
+    <script src="js/min-jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="js/basic.js" type="text/javascript"></script>
+    <script src="js/tree_plug.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var nodesJson = {};
+        var nodesXml = "";
+
+        // 定义一个Tree插件实例对象变量
+        var treePlug = null;
+
+        // 加载 Tree
+        function onLoadTree() {
+
+            // 创建一个Tree插件实例
+            treePlug = new $.fn.webTree();
+
+            // 初始化插件对象内部参数
+            treePlug.init($("div.sdp-tree"));
+
+            var ndItem = null;
+            for (var i = 10; i < 20; i++) {
+
+                // 第一级节点
+                ndItem = {
+                    nodecode: String(i),
+                    nodetext: "第一节点" + i,
+                    nodetitle: "",
+                    supnodecode: ""
+
+                };
+                treePlug.addNodeItem(ndItem);
+
+                // 第二级节点
+                for (var j = 10; j < 20; j++) {
+                    ndItem = {
+                        nodecode: String(i) + String(j),
+                        nodetext: "第二节点" + String(i) + String(j),
+                        nodetitle: "",
+                        supnodecode: String(i)
+                    };
+                    treePlug.addNodeItem(ndItem);
+
+                    // 第三级节点
+                    for (var k = 10; k < 20; k++) {
+                        var tmCode = String(i) + String(j) + String(k);
+                        ndItem = {
+                            nodecode: tmCode,
+                            nodetext: "第三节点" + tmCode,
+                            nodetitle: "",
+                            supnodecode: String(i) + String(j)
+                        };
+                        treePlug.addNodeItem(ndItem);
+                        for (var m = 10; m < 20; m++) {
+                          var tmCode = String(i) + String(j) + String(k) +String(m);
+                          ndItem = {
+                             nodecode: tmCode,
+                             nodetext: "第四节点" + tmCode,
+                             nodetitle: "",
+                             supnodecode: String(i) + String(j) + String(k)
+                        };
+                        treePlug.addNodeItem(ndItem);
+                    }
+                    }
+                }
+
+            };
+
+            treePlug.makeTree();
+
+        }
+
+   
+    </script>
+</head>
+<body>
+    <div style="position: absolute; display: block; top: 10px; left: 50px;">
+        <button onclick="onLoadTree()">
+            加载目录树</button>
+    </div>
+    <div class="sdp-tree" id="demo_tree" style="position: absolute; display: block; left: 50px;
+        top: 50px; height: 500px; width: 400px;">
+    </div>
+</body>
+</html>

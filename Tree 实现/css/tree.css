@@ -1,0 +1,244 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+}
+
+/*Tree 树*/
+.sdp-tree
+{
+    background-color: White;
+    border: 1px solid #a5acb5;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+}
+/*Tree共用*/
+.sdp-tree-base
+{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.sdp-tree-in
+{
+    font-size: 0px;
+    white-space: nowrap;
+    padding-left: 3px;
+    padding-top: 3px;
+}
+.sdp-tree-in .clipdiv
+{
+    white-space: nowrap;
+}
+.sdp-tree-in span
+{
+    height: 18px;
+    padding: 0px 0px 0px 0px !important;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0px;
+}
+.sdp-tree-in .custom_img
+{
+    width: 18px;
+    background-repeat: no-repeat;
+    cursor: defalut;
+}
+.sdp-tree-in .root_img
+{
+    width: 18px;
+    background: url("../img/folder.gif") no-repeat 0 -100px;
+    padding-left: 1px !important;
+    cursor: default;
+}
+.sdp-tree-in .root_title
+{
+    height: 16px;
+    padding-left: 2px !important;
+    padding-right: 4px !important;
+    color: #333;
+    white-space: nowrap;
+    font-family: 宋体, Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.sdp-tree-in .node_title
+{
+    height: 16px;
+    padding-left: 2px !important;
+    padding-right: 4px !important;
+    color: #333;
+    white-space: nowrap;
+    font-family: 宋体, Arial, Verdana, Geneva, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.sdp-tree-in .node_plug_0n
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 0;
+    cursor: defalut;
+}
+.sdp-tree-in .node_plug_1l
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -20px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_plug_2b
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -40px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_plug_2t
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -60px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_plug_3a
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -80px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_expd_0n
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -100px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_expd_1l
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -120px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_expd_2b
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -140px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_expd_2t
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -160px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_expd_3a
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -180px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_line_3n
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -200px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_line_10
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -220px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_line_11
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -240px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_line_20
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -260px;
+    cursor: defalut;
+}
+.sdp-tree-in .node_line_21
+{
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -280px;
+    cursor: defalut;
+}
+.sdp-tree-in .folder_collapse
+{
+    cursor: default;
+    width: 18px;
+    background: url("../img/folder.gif") no-repeat 0 0;
+}
+.sdp-tree-in .folder_expand
+{
+    cursor: default;
+    width: 18px; /*展开图标*/
+    background: url("../img/folder.gif") no-repeat 0 -20px;
+}
+.sdp-tree-in .folder_last
+{
+    cursor: default;
+    width: 18px;
+    background: url("../img/folder.gif") no-repeat 0 -40px; 
+}
+.sdp-tree-in .nullimg
+{
+    cursor: default;
+    width: 18px;
+    background: url("../img/tree.gif") no-repeat 0 -300px;
+}
+.sdp-tree-in .node_default
+{
+    padding-left: 0px;
+    height: 16px;
+    cursor: pointer;
+    border: 1px solid transparent; /*边框设置透明色*/
+}
+.sdp-tree-in .node_hover
+{
+    padding-left: 0px;
+    height: 16px;
+    border: 1px solid #a9acb5;
+    background-color: #ffeec2;
+    cursor: pointer;
+}
+.sdp-tree-in .node_select
+{
+    padding-left: 0px;
+    height: 16px;
+    border: 1px solid #a9acb5;
+    background-color: #ffcb7e;
+    cursor: pointer;
+}
+.sdp-tree-in .checkbox
+{
+    width: 18px;
+    background: url("../img/select.gif") no-repeat 0 0;
+    cursor: default;
+}
+.sdp-tree-in .checkbox_check
+{
+    width: 18px;
+    background: url("../img/select.gif") no-repeat 0 -20px;
+    cursor: default;
+}
+.sdp-tree-in .checkbox_choff
+{
+    width: 18px;
+    background: url("../img/select.gif") no-repeat 0 -40px;
+    cursor: default;
+}
+.sdp-tree-in .radiobtn
+{
+    width: 18px;
+    background: url("../img/select.gif") no-repeat 0 -60px;
+    cursor: default;
+}
+.sdp-tree-in .radiobtn_check
+{
+    width: 18px;
+    background: url("../img/select.gif") no-repeat 0 -80px;
+    cursor: default;
+}
