@@ -12,32 +12,24 @@
 
         var nodesJson = {};
         var nodesXml = "";
-
         // 定义一个Tree插件实例对象变量
         var treePlug = null;
-
         // 加载 Tree
         function onLoadTree() {
-
             // 创建一个Tree插件实例
             treePlug = new $.fn.webTree();
-
             // 初始化插件对象内部参数
             treePlug.init($("div.sdp-tree"));
-
             var ndItem = null;
             for (var i = 10; i < 20; i++) {
-
                 // 第一级节点
                 ndItem = {
                     nodecode: String(i),
                     nodetext: "第一节点" + i,
                     nodetitle: "",
                     supnodecode: ""
-
                 };
                 treePlug.addNodeItem(ndItem);
-
                 // 第二级节点
                 for (var j = 10; j < 20; j++) {
                     ndItem = {
@@ -47,7 +39,6 @@
                         supnodecode: String(i)
                     };
                     treePlug.addNodeItem(ndItem);
-
                     // 第三级节点
                     for (var k = 10; k < 20; k++) {
                         var tmCode = String(i) + String(j) + String(k);
@@ -72,12 +63,8 @@
                 }
 
             };
-
             treePlug.makeTree();
-
         }
-
-   
     </script>
 </head>
 <body>
