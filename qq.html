@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>左右布局</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+     <!-- 输入内容 -->
+     <input type="text" name="" id="" placeholder="请输入内容">
+     <!-- 发送请求 -->
+     <button id="send">发送</button>   
+     <button id="close">关闭</button>
+     <!-- 接收websocket服务得数据 -->
+     <div></div>
+</body>
+<script>
+        var input=document.querySelector('input')
+        var button=document.getElementById('send')
+        var close = document.getElementById('close')
+        var div=document.querySelector('div')
+         // 'ws://echo.websocket.org/'这个服务地址是websocket官方文档中的地址
+        // 不用纠结，后面下一个案例会把他换成自己的
+        // 创建websocket服务地址
+    const socket=new WebSocket('wss://javascript.info/article/websocket/demo/hello') 
+
+    // 当与服务器连接成功出发open事件（websocket四大基本事件https://www.runoob.com/html/html5-websocket.html）
+
+    socket.addEventListener('open',function(){
+        div.innerHTML='连接服务器成功'
+    })
+
+
+    button.addEventListener('click',function(){
+        var value=input.value
+        console.log(value);
+        socket.send(value)
+    })
+
+    socket.addEventListener('message',function(e){
+        div.innerHTML=e.data
+        console.log(e)
+    })
+
+    socket.addEventListener('close',function(event){
+        console.log(222)
+        if (event.wasClean) {
+    alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  } else {
+    // 例如服务器进程被杀死或网络中断
+    // 在这种情况下，event.code 通常为 1006
+    alert('[close] Connection died');
+  }
+    })
+    socket.onerror = function(error) {
+  alert(`[error] ${error.message}`);
+};
+    </script>
+
+</html>
+
+
